@@ -32,6 +32,7 @@ async function signupFormHandler(event) {
             body: JSON.stringify({username, email, password}),
             headers: {'Content-type': 'application/json'}
         });
+        console.log(response)
 
         if (response.ok) {
             document.location.replace('/dashboard/');

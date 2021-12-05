@@ -74,7 +74,7 @@ module.exports = (app) => {
             });
     });
 
-    app.post('/login', (req, res) => {
+    app.post('/api/users/login', (req, res) => {
         User.findOne({
             where: {
                 email: req.body.email
@@ -103,7 +103,7 @@ module.exports = (app) => {
             });
     });
 
-    app.post('/logout', (req, res) => {
+    app.post('/api/users/logout', (req, res) => {
         if (req.session.loggedIn) {
             req.session.destroy(() => {
                 res.status(204).end();

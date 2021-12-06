@@ -114,7 +114,7 @@ module.exports = (app) => {
         }
     });
 
-    app.put('/:id', (req, res) => {
+    app.put('/api/users/:id', (req, res) => {
         User.update(req.body, {
             individualHooks: true,
             where: {
@@ -134,7 +134,7 @@ module.exports = (app) => {
             });
     });
 
-    app.delete('/:id', (req, res) => {
+    app.delete('/api/users/:id', (req, res) => {
         User.destroy({
             where: {
                 id: req.params.id
